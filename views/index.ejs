@@ -26,20 +26,30 @@
     <div class="break"></div>
 
     <!--Display the links to the pages-->
-    <% if(page> 1) { %> <a href="/?page=<%=page-1%>">Before</a>
+
+    <% if(page - 1 == 1) { %> <%# Segunda página %>
+    <a href="/?page=<%=page-1%>">&lt;</a>
+    <% } else if(page > 1) { %> <%# Da terceira até a última página %>
+    <a href="/?page=<%=page-200%>">&lt;&lt;</a>
+    <a href="/?page=<%=page-1%>">&lt;</a>
     <% } %>
+
     <% for(let i=iterator; i <=endingLink; i++) { %>
     <% if(i===page) { %>
-    <a class="selectedLink" href="/?page=<%=i%>">
+    <a class="selectedLink nodecoration" href="/?page=<%=i%>">
         <%=i%>
     </a>
     <% continue; %>
     <% } %>
-    <a href="/?page=<%=i%>">
+    <a href="/?page=<%=i%>" class="nodecoration">
         <%=i%>
     </a>
     <% } %>
-    <% if(page < numberOfPages) { %> <a href="/?page=<%=page+1%>">After</a>
+    <% if(page + 1 == numberOfPages) { %> <%# Penúltima página %>
+    <a href="/?page=<%=page+1%>">&gt;</a>
+    <% } else if(page < numberOfPages) { %> <%# Dá primeira até a antepenultima %>
+    <a href="/?page=<%=page+1%>">&gt;</a>
+    <a href="/?page=<%=page+200%>">&gt;&gt;</a>
     <% } %>
 </body>
 

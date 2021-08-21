@@ -26,6 +26,10 @@ a{
     margin: 50px 0;
 }
 
-a:link,a:visited,a:hover,a:active{
+.nodecoration{
     text-decoration: none;
 }
+
+/* a:link,a:visited,a:hover,a:active{
+    text-decoration: none;
+} */
